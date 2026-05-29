@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo "Logging in to Docker registry"
-      - echo "$SECRET_PASSWORD" | docker login -u "$ECRET_USERNAME" --password-stdn
+      - echo "$SECRET_PASSWORD" | docker login -u "$SECRET_USERNAME" --password-stdn
 
   build:
     commands:
@@ -19,7 +19,7 @@ phases:
   post_build:
     commands:
       - echo "Pushing Docker Image..."
-      - docker push 0blusky0/arsenal-db:latest .
+      - docker push 0blusky0/arsenal-db:latest 
 
 artifacts:
   files:
